@@ -1,0 +1,29 @@
+#include <iostream>
+#include <limits>
+using namespace std;
+
+int main() {
+    long long N;
+    cout << "Ingrese un numero entero positivo N: ";
+    while (!(cin >> N) || N <= 0) {
+        cout << "Entrada invalida. Ingrese un numero entero positivo N: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+
+    cout << "Los primeros " << N << " terminos de la serie son:\n";
+
+    for (long long n = 1; n <= N; ++n) {
+        long long an = n * n + 4 * n;
+        cout << an;
+        if (n != N) cout << ", ";
+    }
+    cout << "\n";
+
+  
+    long long suma = 0;
+    for (long long n = 1; n <= N; ++n) suma += (n * n + 4 * n);
+    cout << "Suma de los " << N << " terminos: " << suma << "\n";
+
+    return 0;
+}
