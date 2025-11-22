@@ -1,0 +1,289 @@
+EJERCICIO 9
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int BINARIO_A_DECIMAL(long long bin) {
+    int dec = 0, i = 0;
+    while (bin > 0) {
+        int dig = bin % 10;
+        dec += dig * pow(2, i);
+        bin /= 10;
+        i++;
+    }
+    return dec;
+}
+
+int main() {
+    long long bin;
+    cout << "Ingrese un numero binario: ";
+    cin >> bin;
+    cout << "Decimal: " << BINARIO_A_DECIMAL(bin) << endl;
+    return 0;
+}
+
+EJERCICIO 8
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int BINARIO_A_DECIMAL(long long bin) {
+    int dec = 0, i = 0;
+    while (bin > 0) {
+        int dig = bin % 10;
+        dec += dig * pow(2, i);
+        bin /= 10;
+        i++;
+    }
+    return dec;
+}
+
+int main() {
+    long long bin;
+    cout << "Ingrese un numero binario: ";
+    cin >> bin;
+    cout << "Decimal: " << BINARIO_A_DECIMAL(bin) << endl;
+    return 0;
+}
+
+EJERCICIO 7
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int BINARIO_A_DECIMAL(long long bin) {
+    int dec = 0, i = 0;
+    while (bin > 0) {
+        int dig = bin % 10;
+        dec += dig * pow(2, i);
+        bin /= 10;
+        i++;
+    }
+    return dec;
+}
+
+int main() {
+    long long bin;
+    cout << "Ingrese un numero binario: ";
+    cin >> bin;
+    cout << "Decimal: " << BINARIO_A_DECIMAL(bin) << endl;
+    return 0;
+}
+
+EJERCICIO 6
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void LITERAL(int d, int m, int a) {
+    string meses[] = {"", "Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+    cout << d << " de " << meses[m] << " de 19" << a << endl;
+}
+
+int main() {
+    int d,m,a;
+    cout << "Ingrese dia, mes, año (dos digitos): ";
+    cin >> d >> m >> a;
+    LITERAL(d,m,a);
+    return 0;
+}
+
+EJERCICIO 5 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void LITERAL(int d, int m, int a) {
+    string meses[] = {"", "Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+    cout << d << " de " << meses[m] << " de 19" << a << endl;
+}
+
+int main() {
+    int d,m,a;
+    cout << "Ingrese dia, mes, año (dos digitos): ";
+    cin >> d >> m >> a;
+    LITERAL(d,m,a);
+    return 0;
+}
+
+EJERCICIO 4 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void LITERAL(int d, int m, int a) {
+    string meses[] = {"", "Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+    cout << d << " de " << meses[m] << " de 19" << a << endl;
+}
+
+int main() {
+    int d,m,a;
+    cout << "Ingrese dia, mes, año (dos digitos): ";
+    cin >> d >> m >> a;
+    LITERAL(d,m,a);
+    return 0;
+}
+
+EJERCICIO 3
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void LITERAL(int d, int m, int a) {
+    string meses[] = {"", "Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+    cout << d << " de " << meses[m] << " de 19" << a << endl;
+}
+
+int main() {
+    int d,m,a;
+    cout << "Ingrese dia, mes, año (dos digitos): ";
+    cin >> d >> m >> a;
+    LITERAL(d,m,a);
+    return 0;
+}
+
+EJERCICIO 2
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void LITERAL(int d, int m, int a) {
+    string meses[] = {"", "Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+    cout << d << " de " << meses[m] << " de 19" << a << endl;
+}
+
+int main() {
+    int d,m,a;
+    cout << "Ingrese dia, mes, año (dos digitos): ";
+    cin >> d >> m >> a;
+    LITERAL(d,m,a);
+    return 0;
+}
+
+EJERCICIO 14
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void LITERAL(int d, int m, int a) {
+    string meses[] = {"", "Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+    cout << d << " de " << meses[m] << " de 19" << a << endl;
+}
+
+int main() {
+    int d,m,a;
+    cout << "Ingrese dia, mes, año (dos digitos): ";
+    cin >> d >> m >> a;
+    LITERAL(d,m,a);
+    return 0;
+}
+
+EJERCICIO 13
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double REDONDEAR(double r, int n) {
+    double f = pow(10, n);
+    return round(r * f) / f;
+}
+
+int main() {
+    double r; int n;
+    cout << "Ingrese numero y decimales: ";
+    cin >> r >> n;
+    cout << "Redondeado: " << REDONDEAR(r, n) << endl;
+    return 0;
+}
+
+EJERCICIO 12
+
+#include <iostream>
+using namespace std;
+
+bool bisiesto(int a) {
+    return (a%4==0 && a%100!=0) || (a%400==0);
+}
+
+bool validar(int d, int m, int a) {
+    int dias[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+    if (bisiesto(a)) dias[2] = 29;
+    return m>=1 && m<=12 && d>=1 && d<=dias[m];
+}
+
+int main() {
+    int d,m,a;
+    cout << "Ingrese dia, mes, año: ";
+    cin >> d >> m >> a;
+    if (validar(d,m,a)) cout << "Fecha valida" << endl;
+    else cout << "Fecha invalida" << endl;
+    return 0;
+}
+
+EJERCICIO 11
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string UNIDADES[] = {"","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"};
+string DECENAS[] = {"","diez","veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"};
+
+string literal(int n) {
+    if (n == 0) return "cero";
+    if (n < 10) return UNIDADES[n];
+    if (n < 100) return DECENAS[n/10] + (n%10 ? " y " + UNIDADES[n%10] : "");
+    if (n < 1000) return UNIDADES[n/100] + "cientos " + literal(n%100);
+    if (n < 2000) return "mil " + literal(n%1000);
+    return "numero grande";
+}
+
+int main() {
+    double r;
+    cout << "Ingrese un monto en Bs: ";
+    cin >> r;
+    int ent = (int)r;
+    int dec = (r - ent) * 100;
+    cout << "Literal: " << literal(ent) << " " << dec << "/100 bolivianos" << endl;
+    return 0;
+}
+
+EJERCICIO 10
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string UNIDADES[] = {"","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"};
+string DECENAS[] = {"","diez","veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"};
+
+string literal(int n) {
+    if (n == 0) return "cero";
+    if (n < 10) return UNIDADES[n];
+    if (n < 100) return DECENAS[n/10] + (n%10 ? " y " + UNIDADES[n%10] : "");
+    if (n < 1000) return UNIDADES[n/100] + "cientos " + literal(n%100);
+    if (n < 2000) return "mil " + literal(n%1000);
+    return "numero grande";
+}
+
+int main() {
+    double r;
+    cout << "Ingrese un monto en Bs: ";
+    cin >> r;
+    int ent = (int)r;
+    int dec = (r - ent) * 100;
+    cout << "Literal: " << literal(ent) << " " << dec << "/100 bolivianos" << endl;
+    return 0;
+}
+
+
+
