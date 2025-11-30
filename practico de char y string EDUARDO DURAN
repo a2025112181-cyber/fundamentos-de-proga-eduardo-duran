@@ -1,0 +1,316 @@
+ejercicio 1
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string cad;
+    getline(cin, cad);
+
+    transform(cad.begin(), cad.end(), cad.begin(), ::toupper);
+
+    cout << cad;
+    return 0;
+}
+
+ejercicio 2 
+
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+int main() {
+    string cad;
+    getline(cin, cad);
+
+    string palabra;
+    int cont = 0;
+    stringstream ss(cad);
+
+    while (ss >> palabra) cont++;
+
+    cout << cont << " palabras";
+    return 0;
+}
+
+
+ejercicio 3
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string cad;
+    getline(cin, cad);
+
+    bool inicio = true;
+
+    for (char &c : cad) {
+        if (inicio && isalpha(c)) {
+            c = toupper(c);
+            inicio = false;
+        } else if (c == ' ')
+            inicio = true;
+    }
+
+    cout << cad;
+    return 0;
+}
+
+
+ejercicio 4 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string cad;
+    cin >> cad;
+
+    string inv = string(cad.rbegin(), cad.rend());
+
+    cout << inv;
+    return 0;
+}
+
+
+ejercicio 5 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string a, b;
+    cin >> a >> b;
+
+    cout << a + b;
+    return 0;
+}
+
+
+ejercicio 6
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool esVocal(char c) {
+    c = tolower(c);
+    return (c=='a'||c=='e'||c=='i'||c=='o'||c=='u');
+}
+
+int main() {
+    string cad;
+    getline(cin, cad);
+
+    string res = "";
+    for (char c : cad)
+        if (!esVocal(c)) res += c;
+
+    cout << res;
+    return 0;
+}
+
+
+ejercicio 7
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string cad;
+    cin >> cad;
+
+    sort(cad.begin(), cad.end());
+    cout << cad;
+    return 0;
+}
+
+
+ejercicio 8
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string palabra, total = "";
+    int n = 11; // cantidad del ejemplo
+
+    for (int i = 0; i < n; i++) {
+        getline(cin, palabra);
+        total += palabra;
+        if (i < n-1) total += " ";
+    }
+
+    cout << total;
+    return 0;
+}
+
+
+ejercicio 9 
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<char> A = {'k','b','c','a','I','t','e','q','p'};
+    vector<char> B = {'a','m','g','p','I','h','k','n'};
+    vector<char> C;
+
+    for (char a : A)
+        for (char b : B)
+            if (a == b) C.push_back(a);
+
+    for (char c : C) cout << c << " ";
+    return 0;
+}
+
+
+ejercicio 10 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool esVocal(char c) {
+    c = tolower(c);
+    return (c=='a'||c=='e'||c=='i'||c=='o'||c=='u');
+}
+
+int main() {
+    string cad;
+    getline(cin, cad);
+
+    int cont = 0;
+    for (int i = 0; i < cad.size()-1; i++)
+        if (esVocal(cad[i]) && esVocal(cad[i+1])) cont++;
+
+    cout << cont;
+    return 0;
+}
+
+
+ejercicio 11
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string SubCadena(string cad, int p, int n) {
+    return cad.substr(p, n);
+}
+
+int main() {
+    string cad;
+    int p, n;
+    cin >> cad >> p >> n;
+
+    cout << SubCadena(cad, p, n);
+    return 0;
+}
+
+
+ejercicio 12
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string BorraCaracterDeCadena(string cad, char x) {
+    string res = "";
+    for (char c : cad)
+        if (c != x) res += c;
+    return res;
+}
+
+int main() {
+    string cad;
+    char x;
+    getline(cin, cad);
+    cin >> x;
+
+    cout << BorraCaracterDeCadena(cad, x);
+    return 0;
+}
+
+ejercicio 13 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int BuscarSubCadena(string a, string b) {
+    size_t pos = b.find(a);
+    return (pos == string::npos ? -1 : pos);
+}
+
+int main() {
+    string b, a;
+    cin >> b >> a;
+
+    cout << BuscarSubCadena(a, b);
+    return 0;
+}
+
+
+ejercicio 14
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+char rotar(char c, int n) {
+    if (c >= 'a' && c <= 'z')
+        return 'a' + (c - 'a' + n) % 26;
+
+    if (c >= 'A' && c <= 'Z')
+        return 'A' + (c - 'A' + n) % 26;
+
+    return c; // no es letra
+}
+
+string Codifica(string cad, int n) {
+    for (char &c : cad)
+        c = rotar(c, n);
+    return cad;
+}
+
+int main() {
+    string cad;
+    int n;
+    getline(cin, cad);
+    cin >> n;
+
+    cout << Codifica(cad, n);
+    return 0;
+}
+
+
+ejercicio 15 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool EsPalindromo(string cad) {
+    string inv = string(cad.rbegin(), cad.rend());
+    return cad == inv;
+}
+
+int main() {
+    string cad;
+    cin >> cad;
+
+    cout << (EsPalindromo(cad) ? "true" : "false");
+    return 0;
+}
